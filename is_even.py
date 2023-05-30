@@ -9,8 +9,12 @@ def is_even(x):
     false if x odd
     raise exception if not an integer 
     """    
-    if not isinstancex(x,int):
+    if not isinstance(x,int):
         raise Exception('not an integer')
+    if x % 2 == 0:
+        return True
+    else:
+        return False    
 
 
 assert is_even.__doc__ 
@@ -22,3 +26,7 @@ except:
     has_raised_exception = True
     
 assert has_raised_exception    
+
+
+assert is_even(1) == False
+assert is_even(2) == True 
